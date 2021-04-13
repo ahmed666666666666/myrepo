@@ -17,17 +17,17 @@ function Mcard({movie,url,like}){
     formdata.append("type", movie.type);
     formdata.append("rate", "1");
 
-var requestOptions = {
-  method: 'POST',
-  body: formdata,
-  redirect: 'follow'
-};
+    var requestOptions = {
+      method: 'POST',
+      body: formdata,
+      redirect: 'follow'
+    };
 
-fetch("http://localhost:8000/resources/likes", requestOptions)
-  .then(response => response.json())
-  .then(result => setUpdate("like"))
-  .catch(error => console.log('error', error));
-}
+  fetch("http://localhost:8000/resources/likes", requestOptions)
+    .then(response => response.json())
+    .then(result => setUpdate("like"))
+    .catch(error => console.log('error', error));
+  }
 
 
   function adddislikes(id){
@@ -36,17 +36,17 @@ fetch("http://localhost:8000/resources/likes", requestOptions)
     formdata.append("type", movie.type);
     formdata.append("rate", "-1");
 
-var requestOptions = {
-  method: 'POST',
-  body: formdata,
-  redirect: 'follow'
-};
+      var requestOptions = {
+        method: 'POST',
+        body: formdata,
+        redirect: 'follow'
+      };
 
-fetch("http://localhost:8000/resources/likes", requestOptions)
-  .then(response => response.json())
-  .then(result => setUpdate("dislike"))
-  .catch(error => console.log('error', error));
-}
+      fetch("http://localhost:8000/resources/likes", requestOptions)
+        .then(response => response.json())
+        .then(result => setUpdate("dislike"))
+        .catch(error => console.log('error', error));
+      }
 
   function increaseView (id){
 
