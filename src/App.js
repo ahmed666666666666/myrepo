@@ -9,7 +9,6 @@ import Home from './components/Home/Home'
 import MyList from './components/MyList/MyList';
 function App() {
 
-
   return (
     <div className="App">
       <Router>

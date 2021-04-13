@@ -14,7 +14,7 @@ function Mcard({movie,url,like}){
   function addlikes(id){
     var formdata = new FormData();
     formdata.append("id",id);
-    formdata.append("type", "movie");
+    formdata.append("type", movie.type);
     formdata.append("rate", "1");
 
 var requestOptions = {
@@ -31,10 +31,9 @@ fetch("http://localhost:8000/resources/likes", requestOptions)
 
 
   function adddislikes(id){
-    console.log()
     var formdata = new FormData();
     formdata.append("id",id);
-    formdata.append("type", "movie");
+    formdata.append("type", movie.type);
     formdata.append("rate", "-1");
 
 var requestOptions = {
@@ -54,44 +53,44 @@ fetch("http://localhost:8000/resources/likes", requestOptions)
     console.log(window.location.href.split('/'))
     var formdata = new FormData();
     formdata.append("id", id);
-    formdata.append("type", "tv_show");
+    formdata.append("type", movie.type);
 
-  var requestOptions = {
-    method: 'POST',
-    body: formdata,
-    redirect: 'follow'
-};
+    var requestOptions = {
+      method: 'POST',
+      body: formdata,
+      redirect: 'follow'
+  };
 
-fetch("http://localhost:8000/resources/views", requestOptions)
-  .then(response => response.json())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
-  }
+  fetch("http://localhost:8000/resources/views", requestOptions)
+    .then(response => response.json())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
+    }
 
-  function storeData(){
-    localStorage.id = movie.id
-    localStorage.type = movie.type
-  }
+    function storeData(){
+      localStorage.id = movie.id
+      localStorage.type = movie.type
+    }
 
-  function storeVideoData (){
-      localStorage.url = movie.url;
-  }
+    function storeVideoData (){
+        localStorage.url = movie.url;
+    }
 
   function addtolist(){
     var formdata = new FormData();
-formdata.append("profile", "9");
-formdata.append(movie.type, movie.id);
+    formdata.append("profile", "9");
+    formdata.append(movie.type, movie.id);
 
-var requestOptions = {
-  method: 'POST',
-  body: formdata,
-  redirect: 'follow'
-};
+    var requestOptions = {
+      method: 'POST',
+      body: formdata,
+      redirect: 'follow'
+    };
 
-fetch("http://localhost:8000/mylist/", requestOptions)
-  .then(response => response.json())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
+    fetch("http://localhost:8000/mylist/", requestOptions)
+      .then(response => response.json())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
   }
 
     return(
@@ -108,15 +107,15 @@ fetch("http://localhost:8000/mylist/", requestOptions)
                   </div>
                   <div className="big-poster-details">
                     <div >
-                  <Link to="/video">  <FontAwesomeIcon icon={faPlay} /></Link>
+                      <Link to="/video">  <FontAwesomeIcon icon={faPlay} /></Link>
+                        
+                      <Link onClick={addtolist}><FontAwesomeIcon icon={faPlusCircle} /></Link>
+    
+                      <Link onClick={()=>addlikes(movie.id)} ><FontAwesomeIcon color={updated=="like"?"blue":"white"} icon={faThumbsUp} /></Link> 
                     
-                  <Link onClick={addtolist}><FontAwesomeIcon icon={faPlusCircle} /></Link>
- 
-                 <Link onClick={()=>addlikes(movie.id)} ><FontAwesomeIcon color={updated=="like"?"blue":"white"} icon={faThumbsUp} /></Link> 
-                    <input type="hidden" value={movie.id}></input>
-                 <Link  onClick={()=>adddislikes(movie.id)}>  <FontAwesomeIcon color={updated=="dislike"?"blue":"white"}  icon={faThumbsDown} /> </Link>
-                    
-                   <Link to="/moreInfo" onClick={storeData}><FontAwesomeIcon icon={faChevronCircleDown} /></Link>
+                      <Link  onClick={()=>adddislikes(movie.id)}>  <FontAwesomeIcon color={updated=="dislike"?"blue":"white"}  icon={faThumbsDown} /> </Link>
+                        
+                      <Link to="/moreInfo" onClick={storeData}><FontAwesomeIcon icon={faChevronCircleDown} /></Link>
                     </div>
                     <div>
                       <p>{movie.name}</p>
