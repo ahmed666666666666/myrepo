@@ -15,9 +15,8 @@ body{
         flex-direction: column;
         height: 100vh;
         width: 106%;
-        object-fit: cover;
         background-repeat: no-repeat;
-        background-position: center;
+        background-position: center center;
         background-size: cover;
     
     }
@@ -58,11 +57,9 @@ body{
         flex-direction: column;
         height: 100vh;
         width: 106%;
-        object-fit: cover;
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-    
     }
 }
 
@@ -72,11 +69,8 @@ body{
     background-position: center;
     background-size: cover;
     }
-/* 
-.heroVideo{
-    background-image: url('https://images-na.ssl-images-amazon.com/images/I/71ArmO8FMDL._SL1500_.jpg');
-}  */
-.play:hover{
+
+    .play:hover{
     text-decoration: none;
 }
 
