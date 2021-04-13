@@ -8,6 +8,7 @@ import Generes from '../genres/genres.js'
 import {CardList} from '../card-list/card-list.component'
 import { data } from 'jquery'
 import Slider from '../slider/slider'
+import Footer from '../footer/footer'
 
 function TvShows(){
 
@@ -101,6 +102,7 @@ function TvShows(){
             <Slider movie = {serieList3} title="romance" />
             <Slider movie = {serieList4} title="action" />
         </div>
+            <Footer/>
         </div>
     )
 }

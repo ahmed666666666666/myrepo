@@ -8,6 +8,7 @@ import Generes from '../genres/genres.js'
 import { data } from 'jquery'
 import Slider from '../slider/slider'
 import { Link } from 'react-router-dom'
+import Footer from '../footer/footer'
 
 function Home(){
 
@@ -104,6 +105,7 @@ function Home(){
             <Slider movie = {serieList1} title="Tvshows" />
             <Slider movie = {serieList5} title="Action Movies && Tv-shows" />
         </div>  
+        <Footer/>
         </div>
     )
 }

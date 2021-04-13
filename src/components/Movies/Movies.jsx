@@ -6,6 +6,7 @@ import { faPlay } from '@fortawesome/free-solid-svg-icons'
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 import Generes from '../genres/genres.js'
 import Slider from '../slider/slider'
+import Footer from '../footer/footer'
 function Movies(){
     
 const [heroHovered, setheroHovered] = useState(false)
@@ -96,7 +97,8 @@ useEffect( async () => {
             <Slider movie = {movieList2} title="violent" />
             <Slider movie = {movieList3} title="romance" />
             <Slider movie = {movieList4} title="horror" />
-        </div>        
+        </div>
+        <Footer/>        
         </div>        
 )
 }
