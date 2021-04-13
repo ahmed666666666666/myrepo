@@ -73,7 +73,7 @@ function Mcard({movie,url,like}){
     }
 
     function storeVideoData (){
-        localStorage.url = movie.url;
+        localStorage.url = movie.id;
     }
 
   function addtolist(){
