@@ -1,18 +1,14 @@
 .center-div{
     display: flex;
-    /* overflow-x: scroll;  
-    overflow-y: hidden; */
-    /* position: relative; */
     height: 128px; 
-    /* border: 1px solid red; */
+ 
 }
-
 
     .main-div{
     width: 100vw;
     position: relative;
-    margin-top: 150px;
-    /* border: 1px solid blue;  */
+    margin-top: 90px;
+    margin-bottom: 45px;
     margin-left: 20px;   
 }
 
@@ -23,16 +19,8 @@
     color: white;
 }
 
-/* img{
-    width: 300px;
-    margin: 10px;
-}
-
-img:hover{
-    transform: scale(1.5);
-} */
 .c{
-    position: relative;
+    /* position: relative; */
     width: 250px;
     /* border: red 1px solid; */
     /* overflow:hidden; */

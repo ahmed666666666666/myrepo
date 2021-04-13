@@ -20,37 +20,7 @@
         transition: all .5  ease;
     
 }
-/* 
-.poster-container:nth-of-type(1) .big-poster:hover{
-    border: 5px solid red;
-     left: 3.97rem; 
-} */
-/* 
-.poster-container:nth-of-type(4) .big-poster:hover{
-    border: 2px solid red;
-    left: 3.97rem;
-} */
 
-/* container style */
-/* small poster style */
-/* .small-poster
-    {
-    width: 40px;
-    height: 100%;
-    position: absolute;
-    cursor: pointer;
-    visibility: hidden;
-    }
-    
-.small-poster img
-    {
-    width: 100%;
-    height: 100%;
-    border-radius: 4px;
-    } */
-/* small poster style */
-
-/* big poster style */
 .big-poster
     {
     z-index: 5;

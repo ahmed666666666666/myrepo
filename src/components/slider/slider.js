@@ -6,25 +6,17 @@ import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 import Mcard from '../m-card/m-card'
 import {Card} from '../card/card.component' 
 
-
 function Slider({movie,title}){
     let count = 0
     let offset = -(movie.length - 5)*250
-    function clearoverflow(e){
-    console.log(e.target.parent)
-    e.target.parentNode.style.overflow = "visible"
-}
-
-function setoverflow(e){
- e.target.parentNode.style.overflowX = "scroll"
-}
-
+ 
 function slidetoleft(e){
      if(count != offset ){    
         count -=250
         console.log(e.target.parentNode.previousElementSibling)
         let x = e.target.parentNode.previousElementSibling
-        x.style.transform = `translateX(${count}px)`  
+        // x.style.transform = `translateX(${count}px)`
+          x.style.marginLeft = `${count}px`  
         console.log(count)
         console.log(offset)
      }
@@ -35,7 +27,8 @@ function slidetoright(e){
     count += 250
     console.log(e.target.parentNode.previousElementSibling)
     let x = e.target.parentNode.previousElementSibling
-     x.style.transform = `translateX(${count}px)`
+    //  x.style.transform = `translateX(${count}px)`
+    x.style.marginLeft = `${count}px`  
     console.log(count)
     }
 }
